@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2020 CA.  All rights reserved.
+This software and all information contained therein is confidential and
+proprietary and shall not be duplicated, used, disclosed or disseminated in any
+way except as authorized by the applicable license agreement, without the
+express written permission of CA. All authorized reproductions must be marked
+with this language.
+
+EXCEPT AS SET FORTH IN THE APPLICABLE LICENSE AGREEMENT, TO THE
+EXTENT PERMITTED BY APPLICABLE LAW, CA PROVIDES THIS SOFTWARE
+WITHOUT WARRANTY OF ANY KIND, INCLUDING WITHOUT LIMITATION, ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+PURPOSE.  IN NO EVENT WILL CA BE LIABLE TO THE END USER OR ANY
+THIRD PARTY FOR ANY LOSS OR DAMAGE, DIRECT OR INDIRECT, FROM THE
+USE OF THIS SOFTWARE, INCLUDING WITHOUT LIMITATION, LOST PROFITS,
+BUSINESS INTERRUPTION, GOODWILL, OR LOST DATA, EVEN IF CA IS
+EXPRESSLY ADVISED OF SUCH LOSS OR DAMAGE.
+-->
+<DataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" namespace="http://im.ca.com/certifications/snmp" xsi:noNamespaceSchemaLocation="SNMPCertificationFacet.xsd">
+    <Author>CA</Author>
+    <Version>1.0</Version>
+    <FacetType name="JuniperLogicalVirtualMib" descriptorClass="com.ca.im.core.datamodel.certs.CertificationFacetDescriptorImpl">
+        <Documentation>Support for Juniper Logical Interface Policer Statistics.</Documentation>
+        <FacetOf namespace="http://im.ca.com/core" name="Item"/>
+        <DisplayName>Juniper Logical Interface Policer</DisplayName>
+        <Protocol>SNMP</Protocol>
+        <MIB>JUNIPER-IF-MIB</MIB>
+        <AttributeGroup name="" list="true" external="true">
+            <Attribute name="Index" type="ObjectID">
+                <Source>1.3.6.1</Source>
+            </Attribute>
+        </AttributeGroup>
+        <Expressions>
+            <ExpressionGroup name="JuniperLogicalVirtualDS" destCert="{http://im.ca.com/normalizer}NormalizedVirtualServerInfo">
+                <Expression destAttr="Indexes">Index</Expression>
+                <Expression destAttr="Names">Name</Expression>
+                <Expression destAttr="Descriptions">Description</Expression>
+            </ExpressionGroup>
+        </Expressions>
+    </FacetType>
+</DataModel>

@@ -1,0 +1,16 @@
+The following Metric Families have priority grouping for the following vendor certs.  The layout of the file is:
+
+<Metric Family>
+	<Group>
+		<Vendor Cert>
+		<Vendor Cert>
+		...
+
+This change will not deliver to our product.
+_______________________________________________________________________________________________
+
+
+NormalizedNATServiceInfo:
+	JuniperLSYSNAT:
+		{http://im.ca.com/certifications/snmp}JuniperLSYSSourceNATPoolMib
+		{http://im.ca.com/certifications/snmp}JuniperLSYSSourceNATwPATMib
